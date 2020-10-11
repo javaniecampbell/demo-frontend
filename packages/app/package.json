@@ -11,6 +11,7 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
+    "http-shutdown": "^1.2.2",
     "morgan": "~1.9.1"
   }
 }
