@@ -8,11 +8,11 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: 'packages/web/build/',
                 src: '**',
-                dest: 'packages/server/public/'
+                dest: 'packages/app/public/'
             },
             secondary: {
                 expand: true,
-                cwd: 'packages/server/',
+                cwd: 'packages/app/',
                 src: '**',
                 dest: 'build/'
             }
