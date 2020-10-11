@@ -27,5 +27,8 @@
     "build": "yarn workspace web build && grunt",
     "test": "yarn workspace web test",
     "test:ci": "yarn workspace web test:ci"
-  }
+  },
+  "files": [
+    "build/**/*"
+  ]
 }
