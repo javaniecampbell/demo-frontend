@@ -19,5 +19,13 @@
     "grunt-contrib-nodeunit": "^2.1.0",
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-run": "^0.8.1"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"yarn app:start\" \"yarn spa:start\"",
+    "app:start": "yarn workspace app start",
+    "spa:start": "yarn workspace web start",
+    "build": "yarn workspace web build && grunt",
+    "test": "yarn workspace web test",
+    "test:ci": "yarn workspace web test:ci"
   }
 }
