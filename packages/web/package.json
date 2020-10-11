@@ -10,10 +10,14 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
+  "devDependencies": {
+    "jest-junit": "^12.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "react-scripts test a --watchAll=false --ci --coverage --reporters=jest-junit --coverageReporters=cobertura",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -30,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest-junit": {
+    "suiteName": "Demo System Under Test",
+    "outputDirectory": "./test-results",
+    "outputName": "TEST-demo.xml"
   }
 }
