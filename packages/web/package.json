@@ -39,5 +39,6 @@
     "suiteName": "Demo System Under Test",
     "outputDirectory": "./test-results",
     "outputName": "TEST-demo.xml"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
