@@ -6,16 +6,23 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "chokidar-cli": "^2.1.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "tailwindcss": "^1.8.13"
   },
   "devDependencies": {
     "jest-junit": "^12.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
+    "build:tailwind": "tailwind build src/styles/tailwind.css -o src/styles/tailwind.output.css",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/styles/tailwind.output.css -c 'npm run build:tailwind'",
     "test": "react-scripts test",
     "test:ci": "react-scripts test a --watchAll=false --ci --coverage --reporters=jest-junit --coverageReporters=cobertura",
     "eject": "react-scripts eject"
